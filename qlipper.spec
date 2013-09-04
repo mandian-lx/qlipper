@@ -13,6 +13,7 @@ BuildRequires:	qt4-devel
 BuildRequires:	qt4-linguist
 BuildRequires:	cmake
 BuildRequires:	libqxt-devel
+BuildRequires:	qtsingleapplication-devel
 BuildRequires:	imagemagick
 
 %description
