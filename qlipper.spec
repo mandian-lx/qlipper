@@ -1,20 +1,20 @@
+Summary:	Lightweight clipboard history
 Name:		qlipper
-Version: 	2.0.1
-Release: 	1
+Version:	2.0.1
+Release:	1
 License:	GPLv2
+Group:		Text tools
+Url:		http://code.google.com/p/qlipper
 Source0:	http://qlipper.googlecode.com/files/%{name}-%{version}.tar.bz2
 Source1:	FindQxt.cmake
 Source2:	FindQtSingleApplication.cmake
 Patch0:		%{name}-2.0.1-qxt_qtsa.patch
-URL:		http://code.google.com/p/qlipper
-Group:		Text tools
-Summary:	Lightweight clipboard history
+BuildRequires:	cmake
+BuildRequires:	imagemagick
 BuildRequires:	qt4-devel
 BuildRequires:	qt4-linguist
-BuildRequires:	cmake
 BuildRequires:	libqxt-devel
 BuildRequires:	qtsingleapplication-devel
-BuildRequires:	imagemagick
 
 %description
 Lightweight and cross-platform clipboard history applet.
@@ -25,7 +25,7 @@ mkdir cmake
 cp %{SOURCE1} cmake
 cp %{SOURCE2} cmake
 %patch0 -p0
-%{__rm} -rf qxt qtsingleapplication
+rm -rf qxt qtsingleapplication
 
 %build
 %cmake_qt4 -DCMAKE_BUILD_TYPE=release -DUSE_SYSTEM_QXT=ON -DUSE_SYSTEM_QTSINGLEAPPLICATION=ON
@@ -48,3 +48,4 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/%{name}.desktop
 %{_iconsdir}/%{name}.*
 %{_datadir}/pixmaps/%{name}.*
+
