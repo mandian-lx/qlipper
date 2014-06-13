@@ -1,7 +1,7 @@
 Summary:	Lightweight clipboard history
 Name:		qlipper
 Version:	2.0.1
-Release:	5
+Release:	6
 License:	GPLv2
 Group:		Text tools
 Url:		http://code.google.com/p/qlipper
