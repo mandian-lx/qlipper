@@ -37,7 +37,6 @@ Lightweight and cross-platform clipboard history applet.
 rm -rf qtsingleapplication #qxt
 
 %build
-#% cmake_qt4 -DCMAKE_BUILD_TYPE=release
 %cmake_qt5 \
     -DUSE_SYSTEM_QTSINGLEAPPLICATION=ON \
     -DUSE_SYSTEM_QXT=OFF \
@@ -48,9 +47,6 @@ rm -rf qtsingleapplication #qxt
 %makeinstall_std -C build
 
 # icons
-# FIXME: imagemagick produces empty images (maybe
-#	a bug in inkskape maybe a bug in image) and
-#	rsvg-convert works properly for png only
 for d in 16 32 48 64 72 256
 do
 	install -dm 0755 %{buildroot}%{_iconsdir}/hicolor/${d}x${d}/apps/
@@ -67,5 +63,4 @@ convert -background none -resize "32x32" src/icons/%{name}.png \
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
-
 
