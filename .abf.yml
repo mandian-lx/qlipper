@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   qlipper-2.0.2.tar.gz: db6d371877556a2e863e3535e50f991f63bb5600
+sources:
+  qlipper-5.0.0.tar.gz: 26e611a74a6df9c53e97c194d41d98e7584eaa82
