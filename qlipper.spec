@@ -9,12 +9,13 @@ Source0:	https://github.com/pvanek/qlipper/archive/%{version}/%{name}-%{version}
 
 BuildRequires:  cmake
 BuildRequires:  imagemagick
-BuildRequires:	libqxt-devel
+#BuildRequires:	libqxt-devel
 BuildRequires:  pkgconfig(ice)
 BuildRequires:  pkgconfig(Qt5Gui)
 BuildRequires:  pkgconfig(Qt5Widgets)
 BuildRequires:  pkgconfig(Qt5Help)
 BuildRequires:  pkgconfig(xext)
+BuildRequires:	qmake5
 BuildRequires:	qtsingleapplication-devel
 
 %description
@@ -37,7 +38,7 @@ Lightweight and cross-platform clipboard history applet.
 rm -rf qtsingleapplication #qxt
 
 %build
-%cmake_qt5 \
+%cmake \
     -DUSE_SYSTEM_QTSINGLEAPPLICATION=ON \
     -DUSE_SYSTEM_QXT=OFF \
     %{nil}
